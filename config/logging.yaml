@@ -1,0 +1,12 @@
+# Logging configuration: JSONL event log + human-readable console rendering.
+
+logging:
+  level: INFO
+  console:
+    enabled: true
+    # compact human-readable line per event
+    format: "{ts} [{event}] {agent} {tool} {detail}"
+  jsonl:
+    enabled: true
+    # file name inside outputs dir; one file per run: run_<id>.jsonl
+    filename_pattern: run_{run_id}.jsonl

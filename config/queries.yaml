@@ -1,0 +1,49 @@
+# Demo research queries + search parameters (domain scope per TASK.md).
+
+window:
+  from_year: 2021
+  to_year: 2026
+
+diseases:
+  - id: pmd
+    name: primary mitochondrial diseases
+    standard_of_care: supportive care (vitamin/cofactor cocktails; no approved disease-modifying therapy)
+  - id: lhon
+    name: Leber hereditary optic neuropathy
+    standard_of_care: idebenone
+  - id: hf
+    name: chronic heart failure
+    standard_of_care: guideline-directed medical therapy (GDMT - ACEi/ARB/ARNI, beta-blockers, MRA, SGLT2i)
+
+mito_interventions:
+  - id: mitoq
+    label: MitoQ
+    type: mito-targeted antioxidant
+  - id: skq1
+    label: SkQ1
+    type: mito-targeted antioxidant
+  - id: ss31
+    label: elamipretide (SS-31)
+    type: cardiolipin-binding peptide
+  - id: urolithin_a
+    label: urolithin A
+    type: mitophagy modulator
+  - id: nad_precursors
+    label: NAD+ precursors (NR/NMN)
+    type: NAD+ boosting
+  - id: lhon_gt
+    label: LHON gene therapy (rAAV2/2-ND4)
+    type: mtDNA gene therapy
+
+queries:
+  - id: broad
+    text: >-
+      Compare mitochondria-targeted drugs (MitoQ, SkQ1, elamipretide, urolithin A,
+      NAD+ precursors, LHON gene therapy) versus standard of care in primary
+      mitochondrial diseases, LHON and chronic heart failure; publications and
+      trial registrations 2021-2026.
+  - id: narrow
+    text: >-
+      Assess the promise of NAD+ precursors (NR/NMN) and urolithin A in
+      mitochondrial dysfunction: latest preclinical and clinical evidence
+      2021-2026, comparison with placebo/standard of care.

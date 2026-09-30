@@ -1,0 +1,12 @@
+.venv
+.git
+outputs
+data
+__pycache__
+*.py[cod]
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.env
+PLAN.md
+test

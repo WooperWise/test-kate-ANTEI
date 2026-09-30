@@ -1,0 +1,13 @@
+services:
+  harness:
+    build: .
+    image: mito-harness:latest
+    # host network: reach the local vLLM at localhost:8000 without config changes;
+    # for a cloud model set OPENAI_BASE_URL/OPENAI_API_KEY in .env instead.
+    network_mode: host
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data

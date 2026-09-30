@@ -1,0 +1,23 @@
+# Main harness configuration: model, budgets, paths.
+# Secrets (API keys) live in .env, never here.
+
+model:
+  # OpenAI-compatible endpoint and model; env vars from .env override these.
+  base_url: ${OPENAI_BASE_URL:http://localhost:8000/v1}
+  name: ${MITO_MODEL:Qwen3.8-27B-FP8}
+  temperature: 0.2
+
+limits:
+  max_plan_steps: 12          # hard cap on plan steps per run
+  max_review_iterations: 3    # reviewer feedback loop budget
+  max_records: 30             # pool size after PMID/NCT dedup
+  llm_concurrency: 8          # semaphore for parallel LLM calls (vLLM batches well)
+  wall_clock_minutes: 90      # per-query timeout with graceful degradation
+  max_tokens_per_run: 400000  # UsageLimits total budget
+
+paths:
+  skills_dir: skills
+  cache_dir: data/cache
+  outputs_dir: outputs
+  queries: config/queries.yaml
+  sources: config/sources.yaml

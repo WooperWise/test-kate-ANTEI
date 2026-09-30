@@ -1,0 +1,27 @@
+# External data sources: endpoints, timeouts, retries.
+
+sources:
+  pubmed:
+    base_url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils
+    search: esearch.fcgi
+    fetch: efetch.fcgi
+    db: pubmed
+    retmode: json
+    timeout_seconds: 20
+    retries: 3
+    retry_backoff_seconds: 1.5
+
+  europepmc:
+    base_url: https://www.ebi.ac.uk/europepmc/webservices/rest
+    search: search
+    format: json
+    result_type: core
+    timeout_seconds: 20
+    retries: 3
+    retry_backoff_seconds: 1.5
+
+  ctgov:
+    base_url: https://clinicaltrials.gov/api/v2/studies
+    timeout_seconds: 20
+    retries: 3
+    retry_backoff_seconds: 1.5
